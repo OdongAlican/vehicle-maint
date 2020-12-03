@@ -6,12 +6,21 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
-import Router from './components/Router'
+import Router from './components/Router';
+import { AUTHENTICATED } from './actions/index'
 
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk)),
 );
+
+const user = localStorage.getItem('user');
+
+if (user) {
+  store.dispatch({
+    type: AUTHENTICATED,
+  });
+}
 
 ReactDOM.render(
   <React.StrictMode>
