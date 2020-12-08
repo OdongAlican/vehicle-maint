@@ -16,6 +16,12 @@ const User = ({user, deleteUser }) => {
                 }}>
                 <button className="btn btn-secondary">Edit</button>
                 </Link> 
+                <Link 
+                to={{
+                    pathname:`users/${user.id}/cars`,
+                    state: { user }
+                }}
+                className="btn btn-info ml-2">vehicles</Link>
             </div>
         </div>
     )
