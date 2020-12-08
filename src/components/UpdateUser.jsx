@@ -2,7 +2,7 @@ import React, { useState} from 'react'
 import { useDispatch } from 'react-redux'
 import { editUser } from '../actions/users'
 
-const UpdateUser = ({ location }) => {
+const UpdateUser = ({ location, history }) => {
     const userValue = location.state
     const [first_name , setFirstname] = useState(userValue.first_name);
     const [last_name, setLastname] = useState(userValue.last_name);
@@ -12,9 +12,11 @@ const UpdateUser = ({ location }) => {
     const [email, setEmail] = useState(userValue.email);
     const dispatch = useDispatch();
 
+    const userId = userValue.id
+
     const submitData = event => {
         event.preventDefault();
-        dispatch(editUser({ first_name, last_name, user_name, phone_number,password, email }));
+        dispatch(editUser({ first_name, last_name, user_name, phone_number,password, email }, userId, history));
       };
 
     return(
