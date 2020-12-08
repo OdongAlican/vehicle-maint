@@ -36,7 +36,7 @@ export function signUpAction({ first_name,
     try {
       const response = await sendUnauthenticatedRequest(method, path, data);
       dispatch({ type: AUTHENTICATED });
-      console.log(response.data.user.authentication_token)
+      localStorage.setItem('current_user', response.data.user.id)
       localStorage.setItem('user', response.data.user.authentication_token);
       history.push('/home');
     } catch (error) {
