@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:3000/api/v1';
+const baseUrl = 'https://go-mint.herokuapp.com/api/v1';
 
 const headers = { headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.user}` }};
 
