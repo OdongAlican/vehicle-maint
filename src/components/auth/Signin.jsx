@@ -25,7 +25,7 @@ const Signin = props => {
             <span>GoMaint provides vehicle checks and car history checks</span>
           </div>
           <div className="provision-input">
-            <input type="text"/>
+            <input type="text" placeholder="Enter Chassis Number"/>
           </div>
           <button className="provision-button">Search</button>
         </div>
