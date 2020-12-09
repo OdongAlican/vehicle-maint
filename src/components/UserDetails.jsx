@@ -1,20 +1,30 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchOneUser } from '../actions/users'
+import CreateVehicle from './CreateVehicle' 
+import UserVehicles from './UserVehicles'
 
 const UserDetails = () => {
+    const [ hideCreateVeh, setHideCreateVeh ] = useState('d-none')
 
     const { id } = useParams()
     const userInformations = useSelector(state => state.usersReducer.userInfos)
-    
-    console.log(userInformations, "informations")
 
+    console.log(id, "user identity")
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchOneUser(id))
     }, [])
+
+    const creatVehicle = () => {
+        setHideCreateVeh('')
+    }
+
+    const removeCreate = () => {
+        setHideCreateVeh('d-none')
+    }
 
     return(
         <div className="user-details-section">
@@ -24,7 +34,9 @@ const UserDetails = () => {
                         <span>Profile</span>
                     </div>
                     <div className="add-more-section">
-                        <button>
+                        <button
+                            onClick = { creatVehicle }
+                        >
                         <i className="fas fa-plus-circle mr-2"></i>
                             Add More
                         </button>
@@ -73,6 +85,8 @@ const UserDetails = () => {
                 </div>
                 <span></span>
             </div>
+            <UserVehicles userId = { id }/>
+            <CreateVehicle hideCreateVeh = { hideCreateVeh } removeCreate = { removeCreate }/>
         </div>
     )
 }
