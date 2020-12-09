@@ -11,11 +11,14 @@ import CreateVehicle from './CreateVehicle'
 import VehicleDetail from './VehicleDetail'
 import UpdateVehicle from './UpdateVehicle'
 import UserVehicles from './UserVehicles'
+import NavBar from './Navbar'
+import Footer from './Footer'
 
 const Router = () => {
     return(
-        <div>
+        <div className="general-section">
             <BrowserRouter>
+                <NavBar/>
                 <Switch>
                     <Route exact path="/" component={ Signin }/>
                     <Route exact path="/signup" component={ Signup }/>
@@ -28,6 +31,7 @@ const Router = () => {
                     <PrivateRoute path="/users/:id/cars" component={ UserVehicles }/>
                     <PrivateRoute path="/edit-vehicle/:id" component={ UpdateVehicle }/>
                 </Switch>
+                <Footer/>
             </BrowserRouter>
         </div>
     )
