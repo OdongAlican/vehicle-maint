@@ -1,6 +1,7 @@
 import React, { useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { showVehicleByUser } from '../actions/vehicle'
+import { Link } from 'react-router-dom';
 
 const UserVehicles = ({ userId }) => {
 
@@ -51,7 +52,11 @@ const UserVehicles = ({ userId }) => {
                                     <div className="first-title-section">
                                         <div className="first-title-section-inner">
                                             <i class="fas fa-car mr-2"></i>
-                                            <span>Car Model</span>
+                                            <Link to={{
+                                                pathname: `/vehicle/${car.id}`
+                                            }}>
+                                                <span>Car Model</span>
+                                            </Link>
                                         </div>
                                         <div className="second-title-section-inner">
                                             <span>{ car.model}</span>
