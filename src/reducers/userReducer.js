@@ -34,8 +34,7 @@ const usersReducer = (state = initialState, action)=> {
                 ...state,
                 users: [],
                 error: '',
-                usersVehicles: action.payload,
-                userInfos: {}
+                usersVehicles: action.payload
             };
         case DELETE_USER:
             return {
@@ -50,7 +49,6 @@ const usersReducer = (state = initialState, action)=> {
                 ...state,
                 users: [],
                 error: '',
-                usersVehicles: [],
                 userInfos: action.payload
             };
         default:
