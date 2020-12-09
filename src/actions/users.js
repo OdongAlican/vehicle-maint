@@ -36,6 +36,11 @@ export const fetchUsersVehiclesFailure = error => ({
     payload: error
 });
 
+export const fetchUsersVehiclesSuccess = vehicles => ({
+    type: FETCH_USERS_VEHICLES_SUCCESS,
+    payload: vehicles
+});
+
 export const fetchSingleUser = user => ({
     type: FETCH_SINGLE_USER,
     payload: user
@@ -88,6 +93,7 @@ export const showVehicleByUser = (id) => async dispatch => {
     const method = "get"
     try {
         const response = await FetchVehicleByUserRequest(method,id);
+        console.log(response.data.vehicle, "in the actions")
         dispatch(fetchUsersVehiclesSuccesss(response.data.vehicle))
     } catch (error) {
         dispatch(fetchUsersVehiclesFailure(error.message))
