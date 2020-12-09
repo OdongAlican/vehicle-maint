@@ -13,7 +13,7 @@ export function signInAction({ email, password }, history) {
       const response = await sendUnauthenticatedRequest(method, path, data);
       dispatch({ type: AUTHENTICATED });
       localStorage.setItem('user', response.data.user_details.authentication_token);
-      history.push('/home');
+      history.push(`/users/${response.data.user.id}`);
     } catch (error) {
       dispatch({
         type: AUTHENTICATION_ERROR,
@@ -38,7 +38,7 @@ export function signUpAction({ first_name,
       dispatch({ type: AUTHENTICATED });
       localStorage.setItem('current_user', response.data.user.id)
       localStorage.setItem('user', response.data.user.authentication_token);
-      history.push('/home');
+      history.push(`/users/${response.data.user.id}`);
     } catch (error) {
       dispatch({
         type: AUTHENTICATION_ERROR,
