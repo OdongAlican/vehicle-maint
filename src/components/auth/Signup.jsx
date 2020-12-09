@@ -22,8 +22,9 @@ const Signup = props => {
   
     return (
       <div className="general-login-section">
-        <div className="login-section p-3">
-          <h3>Sign Up</h3>
+        <div className="login-form-section update-login-form-section">
+          <h6>Create a New Account</h6>
+          <span>For GoMint</span>
           <form onSubmit={submitData}>
             <input
               placeholder="Enter First Name"
@@ -62,14 +63,17 @@ const Signup = props => {
               onChange={e => setEmail(e.target.value)}
             />
             <p className="text-danger">{ errorMessage || '' }</p>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <div className="links-signup-section">
+            <Link to={{
+                pathname: '/',
+              }}
+              >
+                Already have an Account?
+              </Link>
+            </div>
+            <button type="submit" className="mb-2">Register Now</button>
           </form>
-          <Link to={{
-            pathname: '/',
-          }}
-          >
-            Already have an Account?
-          </Link>
+
         </div>
   
       </div>
