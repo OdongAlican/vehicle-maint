@@ -1,12 +1,14 @@
 import { FETCH_USERS_SUCCESS, 
     FETCH_USERS_FAILURE, 
     DELETE_USER,
-    FETCH_USERS_VEHICLES_SUCCESS } from '../actions/users';
+    FETCH_USERS_VEHICLES_SUCCESS,
+    FETCH_SINGLE_USER } from '../actions/users';
 
 const initialState = {
     users: [],
     error: '',
-    usersVehicles: []
+    usersVehicles: [],
+    userInfos: {}
 }
 
 const usersReducer = (state = initialState, action)=> {
@@ -16,28 +18,40 @@ const usersReducer = (state = initialState, action)=> {
                 ...state,
                 users: action.payload,
                 error: '',
-                usersVehicles: []
+                usersVehicles: [],
+                userInfos: {}
             };
         case FETCH_USERS_FAILURE:
             return {
                 ...state,
                 users: [],
                 error: action.payload,
-                usersVehicles: []
+                usersVehicles: [],
+                userInfos: {}
             };
         case FETCH_USERS_VEHICLES_SUCCESS:
             return {
                 ...state,
                 users: [],
                 error: '',
-                usersVehicles: action.payload
+                usersVehicles: action.payload,
+                userInfos: {}
             };
         case DELETE_USER:
             return {
                 ...state,
                 users: state.users.filter(user => user.id !== action.payload),
                 error: '',
-                usersVehicles: []
+                usersVehicles: [],
+                userInfos: {}
+            };
+        case FETCH_SINGLE_USER:
+            return {
+                ...state,
+                users: [],
+                error: '',
+                usersVehicles: [],
+                userInfos: action.payload
             };
         default:
             return state;
