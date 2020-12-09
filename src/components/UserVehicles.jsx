@@ -1,12 +1,12 @@
 import React, { useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { showVehicleByUser } from '../actions/users'
+import { showVehicleByUser } from '../actions/vehicle'
 
 const UserVehicles = ({ userId }) => {
 
     const dispatch = useDispatch();
 
-    const usersCars = useSelector(state => state.usersReducer.usersVehicles)
+    const usersCars = useSelector(state => state.vehicleReducer.usersVehicles)
     console.log(usersCars, "cars list")
 
     useEffect(()=> {

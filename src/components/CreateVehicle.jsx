@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
 import { createVehicle } from '../actions/vehicle'
 
-const CreateVehicle = ({ history, hideCreateVeh, removeCreate }) => {
+const CreateVehicle = ({ hideCreateVeh, removeCreate, userId }) => {
     const dispatch = useDispatch()
 
     const [chassis, setChasis] = useState('')
@@ -12,7 +12,7 @@ const CreateVehicle = ({ history, hideCreateVeh, removeCreate }) => {
     const [avatar, setAvatar] = useState('')
 
     const submitVehicle = event => {
-        dispatch(createVehicle({chassis,model,title,manufacturing_date,avatar}, history));
+        dispatch(createVehicle({chassis,model,title,manufacturing_date,avatar}, userId));
         event.preventDefault();
       };
 
@@ -62,13 +62,10 @@ const CreateVehicle = ({ history, hideCreateVeh, removeCreate }) => {
                   onChange={e => setAvatar(e.target.value)}
                   className="input-control"
                 />
-                {/* <input
-                  type="file"
-                  className="mt-2 btn-control file-section"
-                  onChange={e => setAvatar(e.target.files[0])}
-                /> */}
-                <button type="submit" className="btn-control mt-1">
-                  Create
+                <button 
+                onClick={ removeCreate }
+                type="submit" className="btn-control mt-1">
+                  Add Vehicle
                 </button>
               </form>            
             </div>

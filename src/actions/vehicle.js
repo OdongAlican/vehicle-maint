@@ -1,13 +1,15 @@
 import { FetchVehicleRequest, 
     CreateVehicleRequest,
     DeleteVehicleRequest,
-    UpdateVehicleRequest, 
+    UpdateVehicleRequest,
+    FetchVehicleByUserRequest, 
     FetchOneVehicleRequest} from "../utils/api"
 
 export const FETCH_VEHICLE_SUCCESS = 'FETCH_VEHICLE_SUCCESS'
 export const FETCH_VEHICLE_FAILURE = 'FETCH_VEHICLE_FAILURE'
 export const DELETE_VEHICLE = 'DELETE_VEHICLE'
 export const FETCH_ONE_VEHICLE_SUCCESS = 'FETCH_ONE_VEHICLE_SUCCESS'
+export const FETCH_USERS_VEHICLES_SUCCESS = 'FETCH_USERS_VEHICLES_SUCCESS'
 
 
 export const fetchVehiclesSuccess = vehicles => ({
@@ -29,6 +31,11 @@ export const FetchOneVehicleReq = vehicle => ({
     type: FETCH_ONE_VEHICLE_SUCCESS,
     payload: vehicle,
 })
+
+export const fetchUsersVehiclesSuccesss = vehicles => ({
+    type: FETCH_USERS_VEHICLES_SUCCESS,
+    payload: vehicles
+});
 
 
 export const fetchVehicle = () => async dispatch => {
@@ -53,7 +60,7 @@ export const fetchOneVehicle = id => async dispatch => {
     }
 }
 
-export const createVehicle = ({ chassis, model, title, manufacturing_date, avatar }, history) => async dispatch => {
+export const createVehicle = ({ chassis, model, title, manufacturing_date, avatar }, userId) => async dispatch => {
     const user_id = localStorage.current_user
     const form = {
         vehicle: { user_id, chassis, model, title, manufacturing_date, avatar }
@@ -61,7 +68,7 @@ export const createVehicle = ({ chassis, model, title, manufacturing_date, avata
     const method = "post"
     try {
         await CreateVehicleRequest(method, form)
-        history.push('/vehicles')
+        dispatch(showVehicleByUser(userId))
     } catch (error) {
         dispatch(fetchVehiclesFailure(error.message))
     }
@@ -88,5 +95,16 @@ export const updateVehicle = ({ chassis, model, title, manufacturing_date, avata
         history.push(`/vehicle/${vehicleID}`)
     } catch (error) {
         dispatch(fetchVehiclesFailure(error.message))
+    }
+}
+
+export const showVehicleByUser = (id) => async dispatch => {
+    const method = "get"
+    try {
+        const response = await FetchVehicleByUserRequest(method,id);
+        console.log(response.data.vehicle, "in the actions")
+        dispatch(fetchUsersVehiclesSuccesss(response.data.vehicle))
+    } catch (error) {
+       console.log(error.message)
     }
 }

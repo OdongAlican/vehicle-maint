@@ -1,13 +1,11 @@
 import { FetchUserRequest, 
     DeleteUserRequest, 
     UpdateUserRequest,
-    FetchVehicleByUserRequest,
     FetchOneUserRequest } from '../utils/api'
 
 export const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS';
 export const FETCH_USERS_FAILURE = 'FETCH_USERS_FAILURE'
 export const DELETE_USER = 'DELETE_USER';
-export const FETCH_USERS_VEHICLES_SUCCESS = 'FETCH_USERS_VEHICLES_SUCCESS'
 export const FETCH_USERS_VEHICLES_FAILURE = 'FETCH_USERS_VEHICLES_FAILURE'
 export const FETCH_SINGLE_USER = 'FETCH_SINGLE_USER'
 
@@ -26,20 +24,12 @@ export const deleteRequest = id => ({
     payload: id,
 });
 
-export const fetchUsersVehiclesSuccesss = vehicles => ({
-    type: FETCH_USERS_VEHICLES_SUCCESS,
-    payload: vehicles
-});
 
 export const fetchUsersVehiclesFailure = error => ({
     type: FETCH_USERS_VEHICLES_FAILURE,
     payload: error
 });
 
-export const fetchUsersVehiclesSuccess = vehicles => ({
-    type: FETCH_USERS_VEHICLES_SUCCESS,
-    payload: vehicles
-});
 
 export const fetchSingleUser = user => ({
     type: FETCH_SINGLE_USER,
@@ -89,13 +79,3 @@ export const editUser = ({ first_name, last_name, user_name, phone_number, passw
     }
 }
 
-export const showVehicleByUser = (id) => async dispatch => {
-    const method = "get"
-    try {
-        const response = await FetchVehicleByUserRequest(method,id);
-        console.log(response.data.vehicle, "in the actions")
-        dispatch(fetchUsersVehiclesSuccesss(response.data.vehicle))
-    } catch (error) {
-        dispatch(fetchUsersVehiclesFailure(error.message))
-    }
-}

@@ -86,7 +86,10 @@ const UserDetails = () => {
                 <span></span>
             </div>
             <UserVehicles userId = { id }/>
-            <CreateVehicle hideCreateVeh = { hideCreateVeh } removeCreate = { removeCreate }/>
+            <CreateVehicle 
+            userId = { id }
+            hideCreateVeh = { hideCreateVeh } 
+            removeCreate = { removeCreate }/>
         </div>
     )
 }
