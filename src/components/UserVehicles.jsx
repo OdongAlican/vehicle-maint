@@ -2,25 +2,63 @@ import React, { useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { showVehicleByUser } from '../actions/users'
 
-const UserVehicles = ({location}) => {
-    const userId = location.state.user.id;
+const UserVehicles = ({ userId }) => {
+
     const dispatch = useDispatch();
 
     const usersCars = useSelector(state => state.usersReducer.usersVehicles)
-    
+    console.log(usersCars, "cars list")
+
     useEffect(()=> {
         dispatch(showVehicleByUser(userId))
     }, [])
+    
     return(
-        <div>
+        <div className="user-cars-list">
                 {  
                     usersCars.map(car => (
                         <div 
-                        className="card m-2 bg-secondary col-md-3 p-3"
+                        className="user-car-details"
                         key={car.id}>
-                            <p>{ car.title }</p>
-                            <p className="text-white">{ car.chassis }</p>
-                            <p>{ car.model }</p>
+                            <div className="car-title-header-section">
+                                <span>{ car.title }</span>
+                            </div>
+                            <div className="other-car-details">
+                                <div className="car-image-section">
+                                    <img 
+                                    src="https://specials-images.forbesimg.com/imageserve/5d37038495e0230008f64ec1/960x0.jpg?cropX1=569&cropX2=5130&cropY1=347&cropY2=2912" 
+                                    alt="car-image" />
+                                </div>
+                                <div className="left-user-car-details">
+                                    <div className="first-title-section">
+                                        <div className="first-title-section-inner">
+                                            <i class="fas fa-car mr-2"></i>
+                                            <span>Vehicle Title</span>
+                                        </div>
+                                        <div className="second-title-section-inner">
+                                            <span>{ car.title }</span>
+                                        </div>
+                                    </div>
+                                    <div className="first-title-section">
+                                        <div className="first-title-section-inner">
+                                            <i class="fas fa-car mr-2"></i>
+                                            <span>Chassis</span>
+                                        </div>
+                                        <div className="second-title-section-inner">
+                                            <span>{ car.chassis}</span>
+                                        </div>
+                                    </div>
+                                    <div className="first-title-section">
+                                        <div className="first-title-section-inner">
+                                            <i class="fas fa-car mr-2"></i>
+                                            <span>Car Model</span>
+                                        </div>
+                                        <div className="second-title-section-inner">
+                                            <span>{ car.model}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     ))
                 }
