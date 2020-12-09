@@ -53,3 +53,8 @@ export const FetchOneVehicleRequest = async (method,id) => {
   const response = await axios[method](`${baseUrl}/vehicles/${id}`)
   return response;
 }
+
+export const FetchOneUserRequest = async (method,id) => {
+  const response = await axios[method](`${baseUrl}/users/${id}`)
+  return response;
+}
