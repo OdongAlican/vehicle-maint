@@ -787,14 +787,20 @@
 }
 
 .contact-us-main-section-left {
-  padding: 10px;
+  padding: 40px;
   flex: 1;
-  background-color: #999;
+  background-color: #173865;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.contact-us-main-section-left i {
+  color: #8EC739;
 }
 
 .contact-us-main-section-right {
   flex: 2;
-  background-color: teal;
+  padding: 5px 30px 0;
 }
 
 .contact-us-main-section h6 {
@@ -812,8 +818,6 @@
   flex: 1;
   display: flex;
   padding: 10px;
-  justify-content: center;
-  background-color: turquoise;
   align-items: center;
   font-weight: 18px;
   color: #fff;
@@ -821,14 +825,91 @@
 }
 
 .contact-support-right {
-  flex: 2;
+  flex: 4;
   padding: 10px;
   display: flex;
-  justify-content: center;
-  background-color: thistle;
+  justify-content: flex-start;
   align-items: center;
   font-weight: 18px;
   color: #fff;
   font-weight: bold;
 }
 
+.contact-support i {
+  font-size: 20px;
+}
+
+.lower-contact-support i {
+  font-size: 30px;
+}
+
+.contact-us-main-section-right span {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #555;
+  padding-bottom: 40px;
+}
+
+.top-name-email {
+  display: flex;
+}
+
+.top-name-email input {
+  font-family: 'Source Sans Pro', sans-serif;
+  border: none;
+  font-weight: 700;
+  color: #555;
+  height: 30px;
+  outline: none;
+  width: 100%;
+  border-bottom: 1px solid #CDCDCD;
+  margin-bottom: 10px;
+  background-color: 	#F2F2F2;
+  padding: 0 10px;
+}
+
+.top-name-email-left,
+.top-name-email-right {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.top-lower-email {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+  margin-top: 10px;
+}
+
+.top-lower-email button {
+  border: none;
+  padding: 5px 20px;
+  background-color: #173865;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+}
+
+.top-lower-email button:hover,
+.contact-us-main-section i:hover  {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.top-name-email-text-area {
+  padding-right: 20px;
+}
+
+.top-name-email-text-area textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #CDCDCD;
+  background-color: 	#F2F2F2;
+  padding: 0 10px;
+  font-size: 15px;
+}
