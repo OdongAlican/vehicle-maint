@@ -1,14 +1,37 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchOneVehicle } from '../actions/vehicle'
 import { useParams } from 'react-router-dom'
+import AddReceipt from './AddReceipt'
+import Sale from './Sale'
+import AddHistory from './AddHistory'
 
 const VehicleDetail = () => {
     const { id } = useParams()
     
-     const vehicle = useSelector(state => state.vehicleReducer.oneVehicle)
-     console.log(vehicle, 'info')
+    const vehicle = useSelector(state => state.vehicleReducer.oneVehicle)
+    const [ hideCreateVeh, setHideCreateVeh ] = useState('d-none')
+    const [ hideSale, setHideSale ] = useState('d-none')
+    const [hideService, setHideService] = useState('d-none')
 
+    const removeCreate = () => {
+        setHideCreateVeh('d-none')
+        setHideSale('d-none')
+        setHideService('d-none')
+    }
+
+    const creatReceipt = () => {
+        setHideCreateVeh('')
+    }
+
+    const creatSale = () => {
+        setHideSale('')
+    }
+
+    const createHistory = () => {
+        setHideService('')
+    }
+     
     const dispatch = useDispatch()
     useEffect(()=> {
         const senRequest = async () => {
@@ -27,13 +50,19 @@ const VehicleDetail = () => {
                         <span>{ vehicle.title }</span>
                     </div>
                     <div className="add-receipt-button">
-                        <button>Add Receipt</button>
+                        <button
+                        onClick= {creatReceipt}                        
+                        >Add Receipt</button>
                     </div>
                     <div className="sale-receipt-button">
-                        <button>Sale</button>
+                        <button
+                        onClick = {creatSale}
+                        >Sale</button>
                     </div>
                     <div className="add-history-receipt-button">
-                        <button type="submit">
+                        <button
+                        onClick={createHistory}
+                        >
                         <i class="fas fa-plus-circle mr-2"></i>
                         Add History
                         </button>
@@ -96,6 +125,16 @@ const VehicleDetail = () => {
                     </div>
                 </div>
             </div>
+            <AddReceipt 
+            removeCreate = {removeCreate}
+            hideCreateVeh={hideCreateVeh} />
+            <Sale
+            removeCreate = {removeCreate}
+            hideSale={hideSale} />/>
+            <AddHistory
+            removeCreate = {removeCreate}
+            hideService = {hideService}
+            />
         </div>
     )
 }
