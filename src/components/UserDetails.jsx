@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchOneUser } from '../actions/users'
 import CreateVehicle from './CreateVehicle' 
 import UserVehicles from './UserVehicles'
+import NavBar from './Navbar'
 
 const UserDetails = () => {
     const [ hideCreateVeh, setHideCreateVeh ] = useState('d-none')
@@ -27,6 +28,8 @@ const UserDetails = () => {
     }
 
     return(
+        <div>
+            <NavBar/>
         <div className="user-details-section">
             <div className="inner-user-details">
                 <div className="user-details-upper">
@@ -90,6 +93,7 @@ const UserDetails = () => {
             userId = { id }
             hideCreateVeh = { hideCreateVeh } 
             removeCreate = { removeCreate }/>
+        </div>
         </div>
     )
 }

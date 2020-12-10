@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { signOut } from '../actions/index'
 
 const NavBar = () => {
+    const [user, setUser] = useState('')
+  const dispatch = useDispatch()
+    const logOut = () => {
+        dispatch(signOut());
+      };
+    
+      useEffect(()=>{
+        setUser(localStorage.user)
+      })
+
+    console.log(user)
     return (
         <div className="navbar-section">
             <div className="top-nav-section">
@@ -37,6 +50,17 @@ const NavBar = () => {
                             <span>Live Chat</span>
                         </div>
                     </div>
+                    {
+                        user &&
+                        <div className="log-out-section">
+                            <button
+                            onClick = { logOut }
+                            >
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                            </button>
+                        </div>
+                    }
                 </div>
             </div>
             <div className="latest-news-section">

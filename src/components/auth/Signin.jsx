@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { signInAction } from '../../actions';
+import Navbar from '../Navbar'
 
 const Signin = props => {
     const { history } = props;
@@ -17,6 +18,8 @@ const Signin = props => {
     const errorMessage = useSelector(state => state.authReducer.error);
   
     return (
+      <div>
+        <Navbar/>
       <div className="outer-login-section">
       <div className="general-login-section">
         <div className="extra-login-section">
@@ -94,6 +97,7 @@ const Signin = props => {
             <span>Stuck? and get in touch</span>
           </div>
         </div>
+      </div>
       </div>
       </div>
     );

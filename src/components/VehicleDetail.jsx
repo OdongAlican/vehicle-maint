@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import AddReceipt from './AddReceipt'
 import Sale from './Sale'
 import AddHistory from './AddHistory'
+import NavBar from './Navbar'
 
 const VehicleDetail = () => {
     const { id } = useParams()
@@ -41,6 +42,8 @@ const VehicleDetail = () => {
     }, [])
 
     return(
+        <div>
+            <NavBar/>
         <div className="single-car-details">
         <div 
             className="user-car-details over-write-border single-car-details-inner"
@@ -130,11 +133,12 @@ const VehicleDetail = () => {
             hideCreateVeh={hideCreateVeh} />
             <Sale
             removeCreate = {removeCreate}
-            hideSale={hideSale} />/>
+            hideSale={hideSale} />
             <AddHistory
             removeCreate = {removeCreate}
             hideService = {hideService}
             />
+        </div>
         </div>
     )
 }

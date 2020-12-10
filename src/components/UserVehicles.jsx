@@ -15,6 +15,7 @@ const UserVehicles = ({ userId }) => {
     }, [])
     
     return(
+        <div>
         <div className="user-cars-list">
                 {  
                     usersCars.map(car => (
@@ -67,6 +68,7 @@ const UserVehicles = ({ userId }) => {
                         </div>
                     ))
                 }
+        </div>
         </div>
     )
 }
