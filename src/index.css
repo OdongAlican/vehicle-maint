@@ -782,7 +782,7 @@
 .contact-us-main-section {
   width: 80%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
 }
 
@@ -910,6 +910,6 @@
   outline: none;
   border-bottom: 1px solid #CDCDCD;
   background-color: 	#F2F2F2;
-  padding: 0 10px;
+  padding: 5px 10px;
   font-size: 15px;
 }
