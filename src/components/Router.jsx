@@ -13,6 +13,7 @@ import UpdateVehicle from './UpdateVehicle'
 import UserVehicles from './UserVehicles'
 import Footer from './Footer'
 import UserDetails from './UserDetails'
+import Contact from './Contact'
 
 const Router = () => {
     return(
@@ -21,6 +22,7 @@ const Router = () => {
                 <Switch>
                     <Route exact path="/" component={ Signin }/>
                     <Route exact path="/signup" component={ Signup }/>
+                    <Route exact path="/contact-us" component={ Contact }/>
                     <PrivateRoute exact path="/users/:id" component={ UserDetails }/>
                     <PrivateRoute exact path="/users" component={ Users }/>
                     <PrivateRoute exact path="/update-user" component={ UpdateUser }/>

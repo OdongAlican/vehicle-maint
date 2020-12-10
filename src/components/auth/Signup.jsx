@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { signUpAction } from '../../actions';
+import NavBar from '../Navbar'
 
 const Signup = props => {
     const { history } = props;
@@ -21,6 +22,8 @@ const Signup = props => {
     const errorMessage = useSelector(state => state.authReducer.error);
   
     return (
+      <div>
+        <NavBar/>
       <div className="general-login-section">
         <div className="login-form-section update-login-form-section">
           <h6>Create a New Account</h6>
@@ -75,7 +78,7 @@ const Signup = props => {
           </form>
 
         </div>
-  
+      </div>
       </div>
     );
   };

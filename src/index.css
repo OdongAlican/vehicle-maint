@@ -58,6 +58,10 @@
   padding: 8px 0;
 }
 
+.navigation-section a {
+  text-decoration: none;
+}
+
 .home-navigation-section,
 .about-navigation-section,
 .vehicle-sale-nav-sectin,
@@ -767,4 +771,64 @@
   margin: 0 5px;
   border-radius: 3px;
   outline: none;
+  color: #173865;
+  font-weight: bold;
 }
+
+.active-button {
+  color: #8EC739;
+}
+
+.contact-us-main-section {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+}
+
+.contact-us-main-section-left {
+  padding: 10px;
+  flex: 1;
+  background-color: #999;
+}
+
+.contact-us-main-section-right {
+  flex: 2;
+  background-color: teal;
+}
+
+.contact-us-main-section h6 {
+  font-family:  'Vesper Libre', serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.contact-support {
+  display: flex;
+}
+
+.contact-support-left {
+  flex: 1;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  background-color: turquoise;
+  align-items: center;
+  font-weight: 18px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.contact-support-right {
+  flex: 2;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: thistle;
+  align-items: center;
+  font-weight: 18px;
+  color: #fff;
+  font-weight: bold;
+}
+

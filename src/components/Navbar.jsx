@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { signOut } from '../actions/index'
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     const [user, setUser] = useState('')
@@ -28,21 +29,46 @@ const NavBar = () => {
                 </div>
             </div>
             <div className="navigation-section">
-                <div className="home-navigation-section">
+                <NavLink exact
+                to={{
+                    pathname: "/"
+                }}
+                activeClassName="active-button"
+                className="home-navigation-section">
                     <span>Home</span>
-                </div>
-                <div className="about-navigation-section">
+                </NavLink>
+                <NavLink 
+                to = {{
+                    pathname: "/about-us"
+                }}
+                activeClassName="active-button"
+                className="about-navigation-section">
                     <span>About Us</span>
-                </div>
-                <div className="vehicle-sale-nav-sectin">
+                </NavLink>
+                <NavLink 
+                to={{
+                    pathname: "/vehicles-sale"
+                }}
+                activeClassName="active-button"
+                className="vehicle-sale-nav-sectin">
                     <span>Vehicles For Sale</span>
-                </div>
-                <div className="history-nav-section ">
+                </NavLink>
+                <NavLink 
+                to={{
+                    pathname: "/history"
+                }}
+                activeClassName="active-button"
+                className="history-nav-section ">
                     <span>History Update</span>
-                </div>
-                <div className="contact-nav-section">
+                </NavLink>
+                <NavLink 
+                to={{
+                    pathname: "/contact-us"
+                }}
+                activeClassName="active-button"
+                className="contact-nav-section">
                     <span>Contact</span>
-                </div>
+                </NavLink>
                 <div className="live-chat-section">
                     <div className="chat-icon-section">
                         <i class="fas fa-user"></i>
