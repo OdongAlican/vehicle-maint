@@ -62,7 +62,12 @@ const Signin = props => {
       </div>
       <div className="what-we-do-section">
         <div className="what-we-do-title">
-          <h6>What we do here at <div>GoMaint</div></h6>
+          <div className="what-we-do-here-heading-section">
+            <div className="first-header-div"><div>What we do here at</div></div>
+            <div className="second-header-div">
+              <div>GoMaint</div>
+            </div>
+          </div>
           <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
             eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5>
           <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 

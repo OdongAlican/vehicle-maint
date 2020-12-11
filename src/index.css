@@ -24,7 +24,8 @@
 }
 
 .sample-page-section,
-.home-top-section {
+.home-top-section,
+.icon-top-section {
   flex: 1;
   background-color: #8EC739;
   text-align: center;
@@ -32,6 +33,13 @@
   align-items: center;
   justify-content: center;
   color: #fff;
+}
+
+.icon-top-section {
+  font-size: 30px;
+  cursor: pointer;
+  border-bottom-right-radius: 25px;
+  display: none;
 }
 
 .sample-page-section span,
@@ -107,7 +115,7 @@
   padding: 5px 10px;
   border-radius: 6px;
   color: #fff;
-  width: 35%;
+  width: 50%;
 }
 
 .chat-icon-section span {
@@ -275,22 +283,36 @@
   text-align: center;
 }
 
-.what-we-do-title h6 {
+.what-we-do-here-heading-section {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+}
+
+.first-header-div,
+.second-header-div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Vesper Libre', serif;
-  font-size: 25px;
+}
+
+.what-we-do-title .first-header-div div {
+  font-size: 1.5em;
   font-weight: bold;
   color: #333;
   display: flex;
-  margin: auto;
-  width: 40%;
   align-items: center;
 }
 
-.what-we-do-title h6 div {
+.what-we-do-title .second-header-div div {
   background-color: #173865;
   padding: 5px;
   width: 120px;
   margin-left: 10px;
+  padding: 10px 0;
   color: #fff;
 }
 
@@ -773,6 +795,7 @@
   outline: none;
   color: #173865;
   font-weight: bold;
+  width: 100%;
 }
 
 .active-button {
@@ -912,4 +935,101 @@
   background-color: 	#F2F2F2;
   padding: 5px 10px;
   font-size: 15px;
+}
+
+@media only screen and (max-width: 1120px) {
+
+.sample-page-section,
+.home-top-section{
+  display: none;
+}
+
+.icon-top-section {
+    display: block;
+}
+
+.navigation-section {
+  flex-direction: column;
+}
+
+.home-navigation-section,
+.about-navigation-section,
+.vehicle-sale-nav-sectin,
+.history-nav-section,
+.contact-nav-section,
+.live-chat-section {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 8px 20px;
+}
+}
+
+@media only screen and (max-width: 540px) {
+  .general-login-section {
+    flex-direction: column;
+  }
+
+  .extra-login-section {
+    width: 95%;
+    border-radius: unset;
+    margin: auto;
+  }
+
+  .extra-login-section h6 {
+    width: 90%;
+  }
+
+  .extra-login-section .provision-input {
+    width: 80%;
+  }
+
+  .login-section {
+    width: 95%;
+    margin: auto;
+    border: unset;
+  }
+
+  .latest-news-section {
+    margin-top: 10px;
+  }
+
+  .what-we-do-here-heading-section {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .what-we-do-title .second-header-div {
+    margin: auto;
+  }
+
+  .what-we-do-title h5 {
+    width: 100%;
+  }
+
+  .lower-home-icons-section {
+    flex-direction: column;
+    padding: unset;
+    padding-bottom: 85px;
+    width: 90%;
+  }
+
+  .lower-home-icon-one {
+    margin-bottom: 5px;
+  }
+
+  .top-nav-section {
+    width: 95%;
+  } 
+
+  .main-title-section {
+    font-size: 30px;
+  }
+
+  .icon-top-section {
+    font-size: 25px;
+  }
+
+  .maint-provision {
+    width: 70%;
+  } 
 }
