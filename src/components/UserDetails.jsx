@@ -58,11 +58,13 @@ const UserDetails = () => {
                                 <i class="fas fa-user mr-2"></i>
                                 <span>Full Name :</span>
                             </div>
-                            <div className="first-name-section">
-                                <span>{userInformations.first_name}</span>
-                            </div>
-                            <div className="last-name-section">
-                                <span>{userInformations.last_name}</span>
+                            <div className="first-and-last-name-section">
+                                <div className="first-name-section">
+                                    <span>{userInformations.first_name}</span>
+                                </div>
+                                <div className="last-name-section">
+                                    <span>{userInformations.last_name}</span>
+                                </div>
                             </div>
                         </div>
                         <div className="user-name-section">
@@ -74,7 +76,6 @@ const UserDetails = () => {
                                 <span>{userInformations.user_name}</span>
                             </div>
                         </div>
-
                         <div className="user-email-section">
                             <div className="useremail-label">
                             <i class="fas fa-envelope mr-2"></i>

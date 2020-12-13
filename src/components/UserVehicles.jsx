@@ -35,7 +35,7 @@ const UserVehicles = ({ userId }) => {
                                     <div className="first-title-section">
                                         <div className="first-title-section-inner">
                                             <i class="fas fa-car mr-2"></i>
-                                            <span>Vehicle Title</span>
+                                            <span>Vehicle Title:</span>
                                         </div>
                                         <div className="second-title-section-inner">
                                             <span>{ car.title }</span>
@@ -44,7 +44,7 @@ const UserVehicles = ({ userId }) => {
                                     <div className="first-title-section">
                                         <div className="first-title-section-inner">
                                             <i class="fas fa-car mr-2"></i>
-                                            <span>Chassis</span>
+                                            <span>Chassis:</span>
                                         </div>
                                         <div className="second-title-section-inner">
                                             <span>{ car.chassis}</span>
@@ -56,7 +56,7 @@ const UserVehicles = ({ userId }) => {
                                             <Link to={{
                                                 pathname: `/vehicle/${car.id}`
                                             }}>
-                                                <span>Car Model</span>
+                                                <span>Car Model:</span>
                                             </Link>
                                         </div>
                                         <div className="second-title-section-inner">

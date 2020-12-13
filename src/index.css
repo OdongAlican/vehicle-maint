@@ -1032,4 +1032,138 @@
   .maint-provision {
     width: 70%;
   } 
+
+  .user-details-lower {
+    flex-direction: column;
+    width: 100%;
+    padding: unset;
+  }
+
+  .user-details-lower img {
+    width: 95%;
+    height: 150px;
+  }
+
+  .image-user-section {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .inner-user-details {
+    width: 95%;
+  }
+
+  .user-information-section {
+    padding: 10px 0;
+  }
+
+
+  .full-name-section {
+    margin: auto;
+    width: 95%;
+  }
+
+  .user-name-section,
+  .user-email-section {
+    width: 95%;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  .fullname-label {
+    width: 35%;
+  }
+
+  .username-label {
+    flex: unset;
+  }
+
+  .username-label {
+    width: 50%;
+  }
+
+  .add-more-section {
+    flex: 2;
+  }
+  
+  .first-and-last-name-section{
+    display: flex;
+    width: 65%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .user-name-section-inner {
+    width: 50%;
+  }
+
+  .other-car-details {
+    flex-direction: column;
+  }
+
+  .car-image-section img {
+    width: 100%;
+    height: 120px;
+  }
+
+  .user-cars-list {
+    width: 95%;
+    padding-bottom: 90px;
+  }
+
+  .first-name-section,
+  .last-name-section {
+    flex: unset;
+  }
+
+  .first-title-section-inner {
+    padding: 0 5px;
+    flex: unset;
+    display: flex;
+    align-items: center;
+    width: 50%;
+  }
+
+  .left-user-car-details {
+    padding-bottom: 10px;
+  }
+
+  .second-title-section-inner {
+    flex: unset;
+    display: flex;
+    align-items: center;
+  }
+
+  .inner-create-vehicle-div {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .fullname-label {
+    width: 40%;
+  }  
+
+  .first-and-last-name-section{
+    display: flex;
+    width: 60%;
+    margin: auto;
+  }
+
+
+
+}
+
+@media only screen and (max-width: 300px) {
+  .user-information-section span,
+  .user-information-section i {
+    font-size: 16px;
+  }
+
+  .left-user-car-details span,
+  .left-user-car-details i {
+    font-size: 16px;
+  }
 }
