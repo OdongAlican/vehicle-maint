@@ -777,6 +777,7 @@
 .over-write-border {
   background-color: #DDDDD6;
   border: 1px solid #CDCDCD;
+  width: 95%;
 }
 
 .history-text-area {
@@ -1139,6 +1140,32 @@
   .inner-create-vehicle-div {
     width: 95%;
   }
+
+  .single-car-details-span-main {
+    width: 100%;
+  }
+
+  .single-car-details-span-main span {
+    font-size: 14px;
+  }
+
+  .single-car-details-span-main button {
+    padding: unset;
+    margin: unset;
+    padding: 10px 5px;
+    margin: 0 2px;
+  }
+
+  .single-car-details-span ,
+  .add-receipt-button,
+  .sale-receipt-button,
+  .add-history-receipt-button {
+    font-size: 11px;
+  }
+
+  .over-write-border {
+    padding-bottom: 90px;
+  }
 }
 
 @media only screen and (max-width: 340px) {
@@ -1152,7 +1179,24 @@
     margin: auto;
   }
 
+  .live-chat-section {
+    flex-direction: column;
+  }
 
+  .chat-icon-section {
+    width: 100%;
+    margin: unset;
+  }
+
+  .log-out-section button {
+    margin: unset;
+    border-radius: 3px;
+  }
+
+  .log-out-section {
+    width: 100%;
+    margin-top: 10px;
+  }
 
 }
 
