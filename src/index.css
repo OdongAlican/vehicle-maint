@@ -938,6 +938,16 @@
   font-size: 15px;
 }
 
+.first-and-last-name-section {
+  flex: 2;
+  display: flex;
+}
+
+.first-name-section,
+.last-name-section {
+  flex: unset;
+}
+
 @media only screen and (max-width: 1120px) {
 
 .sample-page-section,
@@ -1171,6 +1181,7 @@
 @media only screen and (max-width: 340px) {
   .fullname-label {
     width: 40%;
+    flex: unset;
   }  
 
   .first-and-last-name-section{

@@ -56,7 +56,7 @@ const UserDetails = () => {
                         <div className="full-name-section">
                             <div className="fullname-label">
                                 <i class="fas fa-user mr-2"></i>
-                                <span>Full Name :</span>
+                                <span>Full Name : </span>
                             </div>
                             <div className="first-and-last-name-section">
                                 <div className="first-name-section">
