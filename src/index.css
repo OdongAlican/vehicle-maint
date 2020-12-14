@@ -808,6 +808,7 @@
   margin: auto;
   margin-top: 30px;
   display: flex;
+  padding-bottom: 90px;
 }
 
 .contact-us-main-section-left {
@@ -1175,6 +1176,20 @@
 
   .over-write-border {
     padding-bottom: 90px;
+  }
+
+  .contact-us-main-section {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-us-main-section-left {
+    flex: unset;
+    width: 95%;
+    padding: unset;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
   }
 }
 
