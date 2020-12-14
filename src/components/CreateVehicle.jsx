@@ -56,10 +56,14 @@ const CreateVehicle = ({ hideCreateVeh, removeCreate, userId }) => {
                   className="input-control"
                 />
                 <input
-                  type="text"
+                  // type="file" 
+                  // accept="image/*" 
+                  // capture="environment"
+                  type="file" 
+                  accept="image/*;capture=camera"
                   placeholder="Enter Avatar"
-                  value={avatar}
-                  onChange={e => setAvatar(e.target.value)}
+                  // value={avatar}
+                  // onChange={e => setAvatar(e.target.value)}
                   className="input-control"
                 />
                 <button 

@@ -23,23 +23,23 @@ const Signin = props => {
       <div className="outer-login-section">
       <div className="general-login-section">
         <div className="extra-login-section">
-          <h6>Vehicle Data History and Data Check</h6>
+          {/* <h6>Vehicle Data History and Data Check</h6>
           <div className="maint-provision">
             <span>GoMaint provides vehicle checks and car history checks</span>
-          </div>
+          </div> */}
           <div className="provision-input">
             <input type="text" placeholder="Enter Chassis Number"/>
           </div>
           <button className="provision-button">Search</button>
         </div>
         <div className="login-section">
-          <h6>GoMaint Login</h6>
+          <h6>GoMint Login</h6>
           <div className="radio-buttons-section">
             <div className="first-radio"> 
-              <input type="radio" name="" id=""/> Vehicle Holder Login
+              <input type="radio"/> Vehicle Holder Login
             </div>
             <div className="second-radio ml-2">
-              <input type="radio" name="" id=""/> Mechanic Login
+              <input type="radio"/> Mechanic Login
             </div>
           </div>
           <div className="login-form-section">
@@ -60,7 +60,7 @@ const Signin = props => {
           </div>
         </div>
       </div>
-      <div className="what-we-do-section">
+      {/* <div className="what-we-do-section">
         <div className="what-we-do-title">
           <div className="what-we-do-here-heading-section">
             <div className="first-header-div"><div>What we do here at</div></div>
@@ -73,8 +73,8 @@ const Signin = props => {
           <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
             eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5>
         </div>
-      </div>
-      <div className="lower-home-icons-section">
+      </div> */}
+      <div className="lower-home-icons-section mt-3">
         <div className="lower-home-icon-one">
           <div className="lower-home-top-icon">
             <i class="fas fa-book"></i>
@@ -93,7 +93,7 @@ const Signin = props => {
             <span>Access  your garage and check</span>
           </div>
         </div>
-        <div className="lower-home-icon-one">
+        {/* <div className="lower-home-icon-one">
           <div className="lower-home-top-icon">
             <i class="fas fa-headset"></i>
           </div>
@@ -101,7 +101,7 @@ const Signin = props => {
           <div className="lower-home-span">
             <span>Stuck? and get in touch</span>
           </div>
-        </div>
+        </div> */}
       </div>
       </div>
       </div>

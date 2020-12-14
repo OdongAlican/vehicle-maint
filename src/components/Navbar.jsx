@@ -79,14 +79,14 @@ const NavBar = () => {
                 className="about-navigation-section">
                     <span>About Us</span>
                 </NavLink>
-                <NavLink 
+                {/* <NavLink 
                 to={{
                     pathname: "/vehicles-sale"
                 }}
                 activeClassName="active-button"
                 className="vehicle-sale-nav-sectin">
                     <span>Vehicles For Sale</span>
-                </NavLink>
+                </NavLink> */}
                 <NavLink 
                 to={{
                     pathname: "/history"
@@ -104,12 +104,12 @@ const NavBar = () => {
                     <span>Contact</span>
                 </NavLink>
                 <div className="live-chat-section">
-                    <div className="chat-icon-section">
+                    {/* <div className="chat-icon-section">
                         <i class="fas fa-user"></i>
                         <div className="chat-text-section">
                             <span>Live Chat</span>
                         </div>
-                    </div>
+                    </div> */}
                     {
                         user &&
                         <div className="log-out-section">
@@ -124,7 +124,7 @@ const NavBar = () => {
                 </div>
             </div>
             <div className="latest-news-section">
-                <span className="latest-news">Latest News: This is the latest news here</span>
+                {/* <span className="latest-news">Latest News: This is the latest news here</span> */}
             </div>
         </div>
     )
